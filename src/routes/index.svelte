@@ -20,29 +20,32 @@
 
 <h1>Svelte UI Components {search}</h1>
 
-<h1>Markdown</h1>
+<!-- Markdown Component -->
 <Markdown bind:text />
 
-<h1>Modal & Fields</h1>
-<Modal bind:isModalOpen>
+<!-- Modal & Field Components -->
+<Modal bind:isModalOpen background={true}>
 	<div style="background: white; box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);">
 		<Field bind:value={search} label="Search" instructions="Type to search" placholder="Joe" />
 		<Field value={0} label="Number" type="number" />
 	</div>
 </Modal>
+
 <button
 	on:click={() => {
 		isModalOpen = true;
 	}}>Open Modal Form</button
 >
 
-<h1>Toast</h1>
+<!-- Toast Component -->
 <Toast duration={4000} />
 <button on:click={() => toast.send(' New Message ' + Math.random())}>New Toast</button>
 
+<!-- Search Filter Component -->
 <h1>Search Filter</h1>
 <SearchFilter {items} bind:search />
 
+<!-- Accordio Component -->
 <h1>Accordion</h1>
 <Accordion isOpen={false} buttonText="Open Accordion">
 	<div>
@@ -54,6 +57,7 @@
 	</div>
 </Accordion>
 
+<!-- Toggle Component -->
 <h1>Toggle</h1>
 <Toggle bind:isToggled label="Beta" />
 <Toggle bind:isToggled label="Beta" style="--toggleBackgroundColor: red;" />
